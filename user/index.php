@@ -159,7 +159,7 @@ include "all.php";
     </div>
 </div>
 
-<!-- ============================sjdkf -->
+<!-- ============================view all-->
 <div class="text-center mt-5">
     <button type="button" class="btn btn-outline-dark btn-lg" style="font-weight: 800;">VIEW ALL PRODUCTS</button>
 </div>
@@ -177,7 +177,9 @@ include "all.php";
                             <?php echo $c['product_name'] ?>
                         </h5>
                         <p class="pl-3 style=" color: red;">Rs
-                            <span class="price" data-price="<?php echo $c['product_price']; ?>"><?php echo $c['product_price']; ?></span>
+                            <span class="price" data-price="<?php echo $c['product_price']; ?>">
+                                <?php echo $c['product_price']; ?>
+                            </span>
                         </p>
                         <p class="pl-3 style=" height: 20px; overflow-y: hidden;">
                             <?php echo $c['product_des'] ?>

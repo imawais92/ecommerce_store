@@ -4,10 +4,8 @@ include "header.php";
 include "all.php";
 ?>
 <!-- ===============product information display ================= -->
-<div class="text-center mt-5">
-    <h2 style="font-size:40px;font-weight:800;"><i> TOTAL PRODUCT IN YOUR CART </i> </h2>
-</div>
-<form action="#" method="post" enctype="multipart/form-data">
+
+<form action="thank_you.php" method="post" enctype="multipart/form-data">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-lg-8 col-sm-8 mt-3">
@@ -114,12 +112,24 @@ include "all.php";
                                 <?php echo $totalCartPrice; ?>
                             </span></h3>
 
-                        <!-- <a type="submit" class="btn btn-" href="place_order.php" role="button"
+                        <!-- <a type="submit" class="btn btn-" href="thank_you.php" role="button"
                         style="float:right;background-color:#f57224;color:white">Place order
                         <?php
                         echo "<span>($cartItemCount)</span>"; ?>
                     </a> -->
-                    <div class="col-md-4 col-lg-4 col-sm-4 mt-5">
+
+                        <?php
+                    } else {
+                        // Display a message when the cart is empty
+                        echo '<div class="text-center  mt-5"><p class="text-center mt-5">There are no items in this cart</p>
+                    <a type="submit" class="btn btn-outline-dark text-center"href="index.php" role="button" name="add_to_cart">CONTINUE SHOPPING</a> </div> ';
+                    }
+                    ?>
+
+                </div>
+            </div>
+            <!-- user iformation======================= -->
+            <div class="col-md-4 col-lg-4 col-sm-4 mt-5">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input class="form-control" type="text" name="name" id="name" required>
@@ -137,21 +147,11 @@ include "all.php";
                     <input class="form-control" type="text" name="address" id="address" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg" name="place_order">Place Order</button>
-            </div>
-                        <?php
-                    } else {
-                        // Display a message when the cart is empty
-                        echo '<div class="text-center  mt-5"><p class="text-center mt-5">There are no items in this cart</p>
-                    <a type="submit" class="btn btn-outline-dark text-center"href="index.php" role="button" name="add_to_cart">CONTINUE SHOPPING</a> </div> ';
-                    }
-                    ?>
-                </div>
-            </div>
-            <!-- user iformation======================= -->
-            
-        </div>
-    </div>
+
 </form>
+</div>
+</div>
+</div>
 
 
 
@@ -168,10 +168,7 @@ if (isset($_POST['remove_item'])) {
         <?php
     }
 }
-
 ?>
-
-
 <?php
 include "footer.php";
 ?>

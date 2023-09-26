@@ -1,4 +1,5 @@
 <?php
+session_unset();
 include "all.php";
 ?>
 
@@ -54,7 +55,8 @@ include "all.php";
             </div>
             <div class="col-md-6 col-lg-6 col-sm-6 mt-5">
                 <div class="">
-                    <img class="mt-5" src="2mobile.jpg" alt="" width="100%" height="550px" style=" border-radius:30px 0px ">
+                    <img class="mt-5" src="2mobile.jpg" alt="" width="100%" height="550px"
+                        style=" border-radius:30px 0px ">
                 </div>
             </div>
         </div>

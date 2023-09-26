@@ -181,7 +181,7 @@ if (!isset($_SESSION['cart'])) {
     <nav class=" mt-3 navbar navbar-expand-lg navbar-light"
         style="background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,88,9,0.9976365546218487) 100%, rgba(0,212,255,1) 100%);">
-        <a class="navbar-brand" href="#"> <img src="img/logo.png" alt="" style="width:20%"> UPHAN</a>
+        <a class="navbar-brand" href="#"> <img src="img/logo.png" alt="" style="width:20%"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

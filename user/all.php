@@ -18,8 +18,9 @@ if (isset($_POST['add_to_cart'])) {
         $quantity = 1;
         if (isset($_SESSION['cart'][$product_id])) {
             $_SESSION['cart'][$product_id]['quantity'] += $quantity;
-        ?>
-        <?php
+            ?>
+            <!-- ===========Select ============== -->
+            <?php
         } else {
             $query = "SELECT * FROM glory_product WHERE id = $product_id";
             $result = mysqli_query($conn, $query);
@@ -53,23 +54,17 @@ $q = mysqli_query($conn, $query);
 
 <?php
 if (isset($_POST['place_order'])) {
-    // Collect user information
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $city = $_POST['city'];
     $address = $_POST['address'];
-
-    // Initialize a variable to store the total order amount
     $totalOrderAmount = 0;
 
-    // Loop through items in the cart to insert order data
     foreach ($_SESSION['cart'] as $product_id => $item) {
         $product_name = $item['product_name'];
         $quantity = $item['quantity'];
         $product_price = $item['product_price'];
         $itemTotal = $item['quantity'] * $item['product_price'];
-
-        // SQL query to insert the order information
         $query = "INSERT INTO `user_orders` (`name`, `phone`, `city`, `address`, `product_name`, `quantity`, `product_price`, `itemTotal`)
                   VALUES ('$name', '$phone', '$city', '$address', '$product_name', '$quantity', '$product_price', '$itemTotal')";
 
@@ -77,7 +72,7 @@ if (isset($_POST['place_order'])) {
             // Successfully inserted the order data
             $totalOrderAmount += $itemTotal;
 
-            // Remove the product from the cart
+            // Remove the product frome the cart
             unset($_SESSION['cart'][$product_id]);
         } else {
             echo 'Failed to insert the record: ' . mysqli_error($conn);
